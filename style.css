@@ -1,133 +1,152 @@
-html { 
-	/* makes page fit in monitor */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+
+/****************Webpage****************/
+
+
+html{
 	width: 100%;
 	height: 100%;
-	background-color: #ddd;
+	margin: 0;
+	padding: 0;
+
+	--cola: rgb(30,30,30);
+	--colb: rgb(144,54,196);
+	--colc: rgb(196,31,60);
+	--cold: rgb(255,64,69);
+	--cole: rgb(40,10,52);
+	--cold: rgb(255,255,255);
+	--colf: rgb(255,255,255,0.2);
+	background-color: var(--cola);
+	font-family: "Open Sans", Arial;
+	color: var(--cold);
 }
 
-/*************** DIVS ********************/
-#container{
-	width: 600px;
-	height: 600px;
-	position: relative;
-	z-index: 0;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: #f00000;
-}
-
-#header{
-	width: 576px;
-	height: 80px;
-	position: absolute;
-	z-index: 1;
-	top: 0px;	
-	left: 0px;
-	background-color: #ddd;
-	padding: 10px 0px 0px 20px;
-	border: 2px solid #000
-}
-
-#navigation{
-	width: 576px;
-	height: 80px;
-	position: absolute;
-	z-index: 2;
-	top: 80px;	
-	left: 0px;
-	background-color: #bbb;
-	padding: 10px 0px 0px 20px;
-	border: 2px solid #000;
-}
-
-#content{
-	width: 576px;
-	height: 362px;
-	position: absolute;
-	z-index: 3;
-	top: 152px;	
-	left: 0px;
-	background-color: #eee;
-	padding-left: 20px;
-	border: 2px solid #000
-}
-
-#footer{
-	width: 576px;
-	height: 80px;
-	position: absolute;
-	z-index: 4;
-	bottom: 0px;	
-	left: 0px;
-	background-color: #ddd;
-	padding-left: 20px;
-	border: 2px solid #000
+body{
+	margin: 0;
+	padding: 0;
 }
 
 
-/*************** TABLE ********************/
-tr{
-	background-color: #aaa;
-	border: 2px solid #f00;
+
+
+/****************Nav****************/
+
+
+nav{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border-radius: 0 0 10px 10px;
+	box-shadow: 0 10px black;
+	margin-bottom: 10px;
 }
 
-td{
-	background-color: #aaa;
-	border: 2px solid #f00;
-	width: 5em;
+#navcontent{
+	display: flex;
+
 }
 
-/*************** FONTS ********************/
-
-h1, h2, h3
-{
-	font-family: Calibri;
-	font-weight: bold;
-	margin-top: 2px;
-	margin-bottom: -5px;
-}
-
-h1
-{
-	font-size: 1.6em;
-	color: #ff000f;
-}
-
-h2
-{
-	font-size: 1.4em;
-	color: #aa000a;
-}
-
-h3
-{
-	font-size: 1.2em;
-	color: #880008;
-}
-
-a:link, a:hover, a:visited, a:active {
-	font-size: 1.0em;
+.navlink{
+	display: inline-block;
 	text-decoration: none;
-	background-color: #edec9a;
-	padding: 2px 2px 2px 2px;
-	margin-bottom:3px;
-    text-align: center;
-    display: inline-block;
-	border: 1px solid #000;
+	color: var(--cold);
+	margin: 0 auto;
+	padding: 10px 50px;
+	font-size: 20px;
+	border-radius: 5px;
+	transition: background-color 0.2s;
 }
 
-a:link {
-	color: #00f;
+.navlink:hover{
+	background-color: var(--colf);
 }
 
-a:hover {
-	color: #0f0;
+.dropdown{
+	--dddisplay: 0;
+	display: inline-block;
+	text-decoration: none;
+	color: var(--cold);
+	margin: 0 auto;
+	border-radius: 5px;
+	transition: background-color 0.2s;
 }
 
-a:visited {
-	color: #f00;
+.dropdown p{
+	margin: 0;
 }
 
-a:active {
-	color: #ff0;
+.dropdown p:hover{
+	background-color: rgba(0,0,0,0);
+}
+
+.dropdown:hover{
+	--dddisplay: 1;
+	background-color: var(--colf);
+}
+
+.dropdown1{
+	display: block;
+	opacity: var(--dddisplay);
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	background-color: var(--colf);
+	transition: opacity 0.2s;
+	border-radius: 5px;
+}
+
+.dropdownitem{
+	display: block;
+	text-decoration: none;
+	color: var(--cold);
+	padding: 10px 50px;
+	font-size: 20px;
+	border-radius: 5px;
+	transition: background-color 0.2s;
+	margin: 0;
+}
+
+.dropdownitem:hover{
+	background-color: var(--colf);
+}
+
+
+/****************Body****************/
+
+
+#wrapper{
+	width: 100%;
+}
+
+
+/****************Login****************/
+
+
+
+
+
+/****************Query****************/
+
+
+#row:nth-child(2n){
+	background-color: var(--colf);
+}
+
+#row{
+	display: grid;
+	grid-template-columns: calc(30% - 20px) calc(25% - 20px) calc(5% - 20px) calc(20% - 20px) calc(20% - 20px);
+	width: 100%;
+	border-radius: 10px;
+}
+
+.titles{
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.output{
+	display: grid;
+	padding: 10px;
+	width: 100%;
 }

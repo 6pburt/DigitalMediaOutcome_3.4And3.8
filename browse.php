@@ -8,11 +8,13 @@
 	<title>home</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-	<body>
+	<body id="load" onload="load()">
+	<script src="script.js"></script>
 		<div id="wrapper">
 		<?php require_once('nav.php'); ?>
 			<div id="header">
 				<img class="himg" src="images/headerimg.jpg">
+				<h2 class="">Find your favourite songs here</h2>
 			</div><!-- end of header -->
 			<?php require_once('nav.php'); ?>
 	

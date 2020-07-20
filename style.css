@@ -119,6 +119,15 @@ nav{
 	width: 100%;
 }
 
+header{
+	width: 100%;
+}
+
+.himg{
+	width: 100%;
+	filter: blur(5px);
+}
+
 
 /****************Login****************/
 
@@ -135,7 +144,7 @@ nav{
 
 #row{
 	display: grid;
-	grid-template-columns: calc(30% - 20px) calc(25% - 20px) calc(5% - 20px) calc(20% - 20px) calc(20% - 20px);
+	grid-template-columns: calc(30% - 20px) calc(25% - 20px) calc(8% - 20px) calc(25% - 20px) calc(12% - 20px);
 	width: 100%;
 	border-radius: 10px;
 }

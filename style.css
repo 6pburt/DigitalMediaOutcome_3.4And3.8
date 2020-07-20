@@ -14,9 +14,10 @@ html{
 	--colb: rgb(144,54,196);
 	--colc: rgb(196,31,60);
 	--cold: rgb(255,64,69);
-	--cole: rgb(40,10,52);
+	--cole: rgb(38, 19, 46);
 	--cold: rgb(255,255,255);
 	--colf: rgb(255,255,255,0.2);
+	--colg: rgb(255,255,255,0.4);
 	background-color: var(--cola);
 	font-family: "Open Sans", Arial;
 	color: var(--cold);
@@ -27,6 +28,10 @@ body{
 	padding: 0;
 }
 
+#load{
+	filter: blur(10px);
+	transition: filter 1s ease-in;
+}
 
 
 
@@ -91,9 +96,17 @@ nav{
 	margin: 0;
 	padding: 0;
 	position: absolute;
-	background-color: var(--colf);
 	transition: opacity 0.2s;
 	border-radius: 5px;
+	z-index: 10000;
+}
+
+.dropdown1 .navlink{
+	background-color: var(--colf);
+}
+
+.dropdown1 .navlink:hover{
+	background-color: var(--colg);
 }
 
 .dropdownitem{
@@ -137,6 +150,10 @@ header{
 
 /****************Query****************/
 
+
+#query{
+	background-image: linear-gradient(to bottom, var(--cola), var(--cole));
+}
 
 #row:nth-child(2n){
 	background-color: var(--colf);

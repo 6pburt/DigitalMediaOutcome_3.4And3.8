@@ -11,7 +11,7 @@
 		<div id="wrapper">
 		<?php require_once('nav.php'); ?>
 			<div id="header">
-				
+				<img class="himg" src="images/headerimg.jpg">
 			</div><!-- end of header -->
 			<?php require_once('nav.php'); ?>
 	

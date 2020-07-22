@@ -3,15 +3,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>home</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-	<body>
+	<body id="load" onload="load()">
+	<script src="script.js"></script>
 		<div id="wrapper">
 		<?php require_once('nav.php'); ?>
 			<div id="header">
 				<img class="himg" src="images/headerimg.jpg">
+				<h2 class="htext">Find your favourite songs here</h2>
+				<h2 class="join"><a href="register.php">Join Now</a></h2>
 			</div><!-- end of header -->
 			<?php require_once('nav.php'); ?>
 	
@@ -25,6 +29,7 @@
 					$query = ("SELECT s.id id, s.song_name song, ab.album album, s.duration duration
 					FROM song s
 					INNER JOIN album ab ON s.album_id = ab.ab_id
+					LIMIT 20
 					");
 					
 					//run the query
@@ -64,7 +69,12 @@
 
 							while ($output3 = mysqli_fetch_array($res3))
 							{
-								$artist = $output3['artist']." ".$artist;
+								if($artist == ""){
+									$artist = $output3['artist'];
+								}
+								else{
+									$artist = $output3['artist'].", ".$artist;
+								}
 							}
 
 							echo("<div id='box'>"
@@ -72,11 +82,8 @@
 							<img class="cover" src="album_covers/'.$output['song'].'album cover/'.$output['song'].'album cover_1.jpg" alt="'.$output['song'].' album cover">
 							</div>'
 							."<div class='song'>"
-							."</p>Name: ".$output['song']
-							."</p><p>Album: ".$output['album']
-							."</p><p>Duration: ".$durval
-							."</p><p>Artist: ".$artist
-							."</p><p>Genre: ".$genre
+							."</p>".$output['song']
+							."</p><p>By ".$artist
 							."</p></div></div>");
 				//closes the while loop
 					}

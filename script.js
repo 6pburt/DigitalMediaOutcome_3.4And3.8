@@ -1,4 +1,4 @@
 function load()
 {
-    document.getElementById("load").style.filter = "blur(0px)";
+    document.getElementById("load").style.filter = "grayscale(0%)";
 };

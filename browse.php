@@ -14,7 +14,8 @@
 		<?php require_once('nav.php'); ?>
 			<div id="header">
 				<img class="himg" src="images/headerimg.jpg">
-				<h2 class="">Find your favourite songs here</h2>
+				<h2 class="htext">Find your favourite songs here</h2>
+				<h2 class="join"><a href="register.php">Join Now</a></h2>
 			</div><!-- end of header -->
 			<?php require_once('nav.php'); ?>
 	

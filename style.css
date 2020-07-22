@@ -18,6 +18,7 @@ html{
 	--cold: rgb(255,255,255);
 	--colf: rgb(255,255,255,0.2);
 	--colg: rgb(255,255,255,0.4);
+	--colh: rgb(0,0,0,0.5);
 	background-color: var(--cola);
 	font-family: "Open Sans", Arial;
 	color: var(--cold);
@@ -33,6 +34,20 @@ body{
 	transition: filter 1s ease-in;
 }
 
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+	background: var(--cole); 
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--colb); 
+}
 
 
 /****************Nav****************/
@@ -139,6 +154,8 @@ header{
 .himg{
 	width: 100%;
 	filter: blur(5px);
+	object-fit: cover;
+	height: 105vh;
 }
 
 
@@ -175,4 +192,44 @@ header{
 	display: grid;
 	padding: 10px;
 	width: 100%;
+}
+
+.albcover{
+	display: inline;
+}
+
+.cover{
+	height: 200px;
+	width: 200px;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+#box{
+	width: 200px;
+	height: 200px;
+	background-color: var(--colc);
+	padding: 5px;
+	border-radius: 5px;
+	/*margin-left: calc(105px - 10%);*/
+}
+
+.indexqry{
+	display: grid;
+	grid-template-columns: 20% 20% 20% 20% 20%;
+	grid-template-rows: 250px 250px 250px 250px 250px 250px 250px 250px 250px 250px;
+}
+
+.song{
+	position: absolute;
+	z-index: 100000;
+	background-color: var(--colh);
+	border-radius: 5px;
+	clear: left;
+	margin-top: -205px;
+	width: 200px;
+}
+
+.song p{
+	margin: 0;
 }

@@ -17,5 +17,3 @@ dbaseName: musicdb
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
 ?>	
-
-<h1></h1>

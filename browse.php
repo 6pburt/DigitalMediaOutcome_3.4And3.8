@@ -69,12 +69,22 @@
 							
 							while ($output2 = mysqli_fetch_array($res2))
 							{
-								$genre = $output2['genre']." ".$genre;
+								if($genre == ""){
+									$genre = $output2['genre'];
+								}
+								else{
+									$genre = $output2['genre'].", ".$genre;
+								}
 							}
 
 							while ($output3 = mysqli_fetch_array($res3))
 							{
-								$artist = $output3['artist']." ".$artist;
+								if($artist == ""){
+									$artist = $output3['artist'];
+								}
+								else{
+									$artist = $output3['artist'].", ".$artist;
+								}
 							}
 
 							echo("<div id='row'>"

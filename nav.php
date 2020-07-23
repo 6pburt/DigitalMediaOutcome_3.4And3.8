@@ -8,7 +8,6 @@
                 <p class="dropdownitem">ACCOUNT</p>
                 <div class="dropdown1">
                     <?php
-                        session_start();
                         if(!isset($_SESSION['login_user'])) {
                             echo("<a class='navlink' href='login.php'>LOGIN</a><a class='navlink' href='register.php'>REGISTER</a>");
                         }

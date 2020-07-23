@@ -46,26 +46,26 @@
 							elseif(strlen(strval(($dur % 60))) == 0) {
 								$durval = (($dur - $dur % 60) / 60).":00".strval(($dur % 60));}
 							
-							$query2 = ("SELECT g.genre genre
-							FROM genre g
-							INNER JOIN genre_link gl ON g.g_id = gl.genre_id
-							WHERE song_id = ".$output['id']);
+							//$query2 = ("SELECT g.genre genre
+							//FROM genre g
+							//INNER JOIN genre_link gl ON g.g_id = gl.genre_id
+							//WHERE song_id = ".$output['id']);
 
 							$query3 = ("SELECT a.artist artist
 							FROM artist a
 							INNER JOIN artist_link al ON a.a_id = al.artist_id
 							WHERE song_id = ".$output['id']);
 
-							$res2 = mysqli_query($con,$query2);
+							//$res2 = mysqli_query($con,$query2);
 							$res3 = mysqli_query($con,$query3);
 
-							$genre = "";
+							//$genre = "";
 							$artist = "";
 							
-							while ($output2 = mysqli_fetch_array($res2))
-							{
-								$genre = $output2['genre']." ".$genre;
-							}
+							//while ($output2 = mysqli_fetch_array($res2))
+							//{
+							//	$genre = $output2['genre']." ".$genre;
+							//}
 
 							while ($output3 = mysqli_fetch_array($res3))
 							{

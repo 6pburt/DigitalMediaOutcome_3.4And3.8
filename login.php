@@ -28,31 +28,32 @@
 ?>
 
 <!DOCTYPE html5>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>UserList</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body id="load" onload="load()">
-	<script src="script.js"></script>
 		<div id="wrapper">
 			<?php require_once('nav.php'); ?>
 			<div id="header">
 				<img class="himg" src="images/headerimg.jpg">
-				<h2 class="htext">Find your favourite songs here</h2>
+				<h2 id="loginopen" class="htext">Find your favourite songs here</h2>
 				<h2 class="join"><a href="register.php">Join Now</a></h2>
 			</div><!-- end of header -->
 			
 	
-			<div id="content">
-				<div>
-					<h2><form action="" method ="post" id="login">
-						<label id='login'>Username: </label>
-						<input type="text" name="username" class="username" placeholder="enter username">
-						<label id='login'>Password: </label>
-						<input type="password" name="password" class="password" placeholder="enter password">
-						<input type="submit" value="Submit">
+			<div id="loginpage">
+				<div id="logincard">
+					<h2><form action="" method ="post">
+						<div id="login"><label>Username: </label>
+						<input type="text" name="username" autocomplete="off" class="username" placeholder="enter username"></div>
+						<div id="login"><label>Password: </label>
+						<input type="password" name="password" class="password" placeholder="enter password"></div>
+						<input id="sublogin" type="submit" value="Submit">
+						<img id="loginclose" src="images/cross.png">
 					</form></h2>
 					<?php echo $error;?>
 				</div>
@@ -61,5 +62,6 @@
 				<p>Copyright Pierce Burt 2020</p>
 			</div><!-- end of footer -->
 		</div><!-- end of container -->
+		<script src="script.js"></script>
 	</body>
 </html>

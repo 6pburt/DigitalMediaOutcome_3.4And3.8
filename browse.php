@@ -5,12 +5,13 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>home</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 	<body id="load" onload="load()">
-	<script src="script.js"></script>
 		<div id="wrapper">
+		<?php require_once("login.php");?>
 		<?php require_once('nav.php'); ?>
 			<div id="header">
 				<img class="himg" src="images/headerimg.jpg">
@@ -35,6 +36,7 @@
 					$query = ("SELECT s.id id, s.song_name song, ab.album album, s.duration duration
 					FROM song s
 					INNER JOIN album ab ON s.album_id = ab.ab_id
+					ORDER BY song asc
 					");
 					
 					//run the query
@@ -102,5 +104,6 @@
 				<p>Copyright Pierce Burt 2020</p>
 			</div><!-- end of footer -->
 		</div><!-- end of container -->
+		<script src="script.js"></script>
 	</body>
 </html>

@@ -3,21 +3,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="ISO-8859-1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>home</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 	<body id="load" onload="load()">
-	<script src="script.js"></script>
 		<div id="wrapper">
+		<?php require_once("login.php");?>
 		<?php require_once('nav.php'); ?>
 			<div id="header">
 				<img class="himg" src="images/headerimg.jpg">
 				<h2 class="htext">Find your favourite songs here</h2>
 				<h2 class="join"><a href="register.php">Join Now</a></h2>
 			</div><!-- end of header -->
-			<?php require_once('nav.php'); ?>
 	
 			<div id="query">
 				<div class="indexqry">
@@ -25,7 +25,7 @@
 					//connect.php (tells where to connect servername, username, password, dbaseName)
 					require_once('connect.php');
 					
-					//create a variable to store sql code for the 'display all users' query
+					//create a variable to store sql code for the base song info query with info for song name
 					$query = ("SELECT s.id id, s.song_name song, ab.album album, s.duration duration
 					FROM song s
 					INNER JOIN album ab ON s.album_id = ab.ab_id
@@ -35,7 +35,7 @@
 					//run the query
 					$res = mysqli_query($con,$query);
 					
-					//run query results using a while loop
+					//run query results using a while loop to make a div for each song with all the information in it
 						while ($output = mysqli_fetch_array($res))
 						{	
 							$dur = $output['duration'];
@@ -90,9 +90,12 @@
 				?>
 				</div>
 			</div><!-- end of content -->
+
 			<div id="footer">
 				<p>Copyright Pierce Burt 2020</p>
 			</div><!-- end of footer -->
 		</div><!-- end of container -->
+
+		<script src="script.js"></script>
 	</body>
 </html>

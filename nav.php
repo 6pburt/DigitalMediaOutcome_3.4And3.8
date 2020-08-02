@@ -9,7 +9,7 @@
                 <div class="dropdown1">
                     <?php
                         if(!isset($_SESSION['login_user'])) {
-                            echo("<a class='navlink' href='login.php'>LOGIN</a><a class='navlink' href='register.php'>REGISTER</a>");
+                            echo("<a class='navlink' id='loginopen' href='#wrapper'>LOGIN</a><a class='navlink' href='register.php'>REGISTER</a>");
                         }
                         else{
                             echo("<a class='navlink' href='logout.php'>LOG OUT</a><a class='navlink' href='account.php'>ACCOUNT</a>");

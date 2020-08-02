@@ -40,28 +40,21 @@
 	<script src="script.js"></script>
 		<div id="wrapper">
 			<?php require_once('nav.php'); ?>
-			<div id="header">
-				<img class="himg" src="images/headerimg.jpg">
-				<h2 class="htext">Find your favourite songs here</h2>
-				<h2 class="join"><a href="register.php">Join Now</a></h2>
-			</div><!-- end of header -->
 			
-	
-			<div id="content">
-				<div>
-					<h2><form action="" method ="post" id="login">
-						<label id='login'>Username: </label>
-						<input type="text" name="username" class="username" placeholder="enter username">
-						<label id='login'>Password: </label>
-						<input type="password" name="password" class="password" placeholder="enter password">
-						<input type="submit" value="Submit">
-					</form></h2>
-					<?php echo $error;?>
-				</div>
-			</div><!-- end of content -->
-			<div id="footer">
-				<p>Copyright Pierce Burt 2020</p>
-			</div><!-- end of footer -->
-		</div><!-- end of container -->
+			<div id="loginpage">
+				<div id="logincard">
+					<h2>Login</h2><img id="loginclose" src="images/cross.png"><form action="" method ="post">
+					<div id="login"><label>Username </label>
+						<input type="text" name="username" autocomplete="off" class="username" placeholder="enter username"></div>
+						<div id="login"><label>Password </label>
+						<input type="password" name="password" class="password" placeholder="enter password"></div>
+						<input id="sublogin" type="submit" value="Submit">
+						<p id="error"><?php echo $error;?></p>
+						</div>
+					</form>
+					</div>
+				</div><!-- end of content -->
+			</div><!-- end of container -->
+		</div>
 	</body>
 </html>

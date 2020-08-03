@@ -6,8 +6,7 @@
 		require_once('connect.php');
 		//username and password sent from form
 		$myusername = mysqli_real_escape_string($con, $_POST['username']);
-		$mypassword = mysqli_real_escape_string($con, $_POST['password']);
-		$hashpass = hash('sha256', $mypassword);
+		$hashpass = hash('sha256', mysqli_real_escape_string($con, $_POST['password']));
 		$sql = "SELECT user_name FROM login WHERE user_name = '$myusername' and `password` = '$hashpass'";
 
 		$result = mysqli_query($con,$sql);

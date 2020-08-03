@@ -343,6 +343,90 @@ input[type=submit]:focus{
 }
 
 
+/****************Register****************/
+
+
+#registerpage{
+	z-index: 10000000;
+	padding: calc(50vh - 250px) calc(50vw - 250px);
+	top: 0;
+	left: 0;
+}
+
+#registercard{
+	background-color: var(--colh);
+	width: 500px;
+	height: 350px;
+	border-radius: 18px;
+	text-align: center;
+}
+
+#registercard h2{
+	float: center;
+	display: block;
+	margin: 0;
+}
+
+#rlogin{
+	font-size: 16px;
+	font-weight: 300;
+	font-family: "Open Sans", Arial;
+	background-color: var(--colc);
+	border-radius: 100px;
+	margin: 30px 10px;
+	height: auto;
+}
+
+#rlogin label{
+	border-right: 2px solid var(--colg);
+	width: 140px;
+	padding: 5px;
+	display: inline-block;
+	text-align: center;
+}
+
+#rsublogin{
+	border-radius: 100px;
+	border: none;
+	background-color: var(--colc);
+	color: var(--cold);
+	font-size: 16px;
+	font-weight: 300;
+	transition: all 0.25s;
+	padding: 5px;
+	margin: 20px 0 0 0;
+}
+
+#rsublogin:hover{
+	background-color: var(--coli);
+	cursor: pointer;
+}
+
+.rusername{
+	background-color: var(--colc);
+	color: var(--cold);
+	border: none;
+	font-size: 16px;
+	font-weight: 300;
+	font-family: "Open Sans", Arial;
+	width: 318px;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.rpassword{
+	background-color: var(--colc);
+	color: var(--cold);
+	border: none;
+	font-size: 16px;
+	font-weight: 300;
+	font-family: "Open Sans", Arial;
+	width: 318px;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+
 /****************Query****************/
 
 

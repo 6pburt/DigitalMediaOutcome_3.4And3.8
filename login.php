@@ -1,6 +1,9 @@
 <html>
 	<?php
-	require_once("loginrequest.php")
+	require_once("loginrequest.php");
+	if($_SERVER['REQUEST_URI'] == '/musicdb/login.php') {
+		header('location: index.php');
+	}
 	?>
 	<div id="loginpage" style="<?php if($error==null){echo("display: none;");} else{echo("display: block;");}?>">
 		<div id="logincard">

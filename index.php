@@ -6,18 +6,18 @@
 	<meta charset="ISO-8859-1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>home</title>
+	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 	<body id="load" onload="load()">
 		<div id="wrapper">
-		<?php require_once("login.php");?>
+		<?php
+		if(!isset($_SESSION['login_user'])) {
+			require_once("login.php");
+		}
+		?>
 		<?php require_once('nav.php'); ?>
-			<div id="header">
-				<img class="himg" src="images/headerimg.jpg">
-				<h2 class="htext">Find your favourite songs here</h2>
-				<h2 class="join"><a href="register.php">Join Now</a></h2>
-			</div><!-- end of header -->
+		<?php require_once('header.php'); ?>
 	
 			<div id="query">
 				<div class="indexqry">

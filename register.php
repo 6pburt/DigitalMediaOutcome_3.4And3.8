@@ -2,6 +2,9 @@
 <?php
 session_start();
 $error = null;
+if(isset($_SESSION['login_user'])) {
+	header('location: index.php');
+}
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 	//Connect.php (tells where to connect servername, username, password, dbaseName)
 	require_once('connect.php');
@@ -18,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 						
 		//If result matched $myusername and $mypassword, table row must be 1 row
 		if($count == 1) {
-			$error = "Your login name or password is invalid";
+			$error = "Your login name is taken";
 		} 
 
 		elseif(strlen($myusername) > 15) {
@@ -45,7 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>UserList</title>
+		<title>Register</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body id="load" onload="load()">

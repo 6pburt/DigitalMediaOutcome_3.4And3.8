@@ -1,5 +1,8 @@
 <?php
 	session_start();
+	if($_SERVER['REQUEST_URI'] == '/musicdb/loginrequest.php') {
+		header('location: index.php');
+	}
 	$error = null;
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		//Connect.php (tells where to connect servername, username, password, dbaseName)
@@ -21,5 +24,6 @@
         else {
 			$error = "Your login name or password is invalid";
 			}
+			
 	}
 ?>

@@ -1,4 +1,9 @@
 <html>
+	<?php
+	if($_SERVER['REQUEST_URI'] == '/musicdb/profileheader.php') {
+		header('location: profile.php');
+	}
+	?>
 	<div id="header">
 		<img class="himg" src="images/headerimg.jpg">
 		<h2 class="htext">Welcome <?php echo(ucwords($_SESSION['login_user']));?></h2>

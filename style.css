@@ -20,6 +20,7 @@ html{
 	--colg: rgb(255,255,255,0.4);
 	--colh: rgb(0,0,0,0.5);
 	--colj: rgb(38,19,46,0.6);
+	--colk: rgb(0,0,0,0);
 
 	/*--cola: rgb(148,190,229);
 	--colb: rgb(245,126,32);
@@ -160,7 +161,6 @@ nav{
 
 #wrapper{
 	width: 100%;
-	height: 100%;
 }
 
 #header{
@@ -227,9 +227,10 @@ nav{
 }
 
 #profilecnt{
-	width: 80vw;
-	margin: 0 10vw;
-	background-color: var(--cola);
+	width: 70vw;
+	height: 75vh;
+	overflow-y: scroll;
+	padding: 0 15vw;
 }
 
 #deleteuser{
@@ -243,6 +244,139 @@ nav{
 
 #user{
 	margin: 6px 0 0 0;
+}
+
+#headerquery{
+	position: absolute;
+	margin-top: -75vh;
+}
+
+/* width */
+#profilecnt::-webkit-scrollbar {
+	width: 10px;
+	border-radius: 5px;
+}
+  
+/* Track */
+#profilecnt::-webkit-scrollbar-track {
+	background: var(--colk);
+	border-radius: 5px;
+}
+   
+/* Handle */
+#profilecnt::-webkit-scrollbar-thumb {
+	background: var(--colc);
+	border-radius: 5px;
+}
+
+#pheader{
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	background-image: linear-gradient(to bottom, var(--colk), var(--cola));
+	z-index: 1;
+}
+
+.phimg{
+	width: 100%;
+	filter: blur(5px);
+	object-fit: cover;
+	height: 100vh;
+}
+
+div.phimg{
+	background-image: linear-gradient(to bottom, var(--colj), var(--cola));
+	margin-top: -100vh;
+}
+
+.phtext{
+	position: absolute;
+	z-index: 100;
+	margin-top: -85vh;
+	font-size: calc(3vw + 20px);
+	width: 100%;
+	text-align: center;
+	font-family: "Montserrat", Arial;
+}
+
+#pfooter{
+	width: 100%;
+	background-color: var(--colk);
+	position: absolute;
+	bottom: 0;
+}
+
+#pfooter p{
+	padding: 20px 15vw;
+	margin: 0;
+}
+
+#deluserprf{
+	font-size: 16px;
+	font-weight: 300;
+	font-family: "Open Sans", Arial;
+	background-color: var(--colc);
+	border-radius: 100px;
+	margin: 30px 10px;
+	height: auto;
+}
+
+#deluserprf label{
+	border-right: 2px solid var(--colg);
+	width: 350px;
+	padding: 5px;
+	display: inline-block;
+	text-align: center;
+}
+
+.prfpassword{
+	background-color: var(--colc);
+	color: var(--cold);
+	border: none;
+	font-size: 16px;
+	font-weight: 300;
+	font-family: "Open Sans", Arial;
+	width: calc(70vw - 420px);
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+#deluserprf + #sublogin{
+	margin-left: 10px;
+}
+
+#prfdelpage{
+	background-color: var(--colh);
+	z-index: 10000000;
+	padding: calc(50vh - 150px) calc(50vw - 200px);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#prfdelcard{
+	background-color: var(--cola);
+	width: 400px;
+	height: 300px;
+	border-radius: 18px;
+	text-align: center;
+}
+
+#prfdelcard h2{
+	float: center;
+	display: block;
+	margin: 0;
+}
+
+#prfdelclose{
+	right: calc(50% - 195px);
+	top: calc(50% - 145px);
+	padding: 3px;
+	height: 20px;
+	width: 20px;
+	border-radius: 13px;
+	background-color: var(--colc);
+	position: absolute;
 }
 
 
@@ -493,7 +627,7 @@ input[type=submit]:focus{
 	background-color: var(--colc);
 	padding: 5px;
 	border-radius: 5px;
-	/*margin-left: calc(100px - 10%);*/
+	margin-left: calc();
 }
 
 .indexqry{

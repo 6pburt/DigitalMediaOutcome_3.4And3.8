@@ -33,11 +33,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			$registerqry = "INSERT INTO login( user_name, `password`) VALUES('$myusername', '$hashpass')";
 			if(mysqli_query($con,$registerqry)){
 				$error = "Registered!";
+				header('location: loginpage.php');
 			}
 			else{
 				$error = "Cannot register. Unknown error.";
 			}
 		}
+	}
+	else{
+		$error = "Passwords do not match.";
 	}
 }
 

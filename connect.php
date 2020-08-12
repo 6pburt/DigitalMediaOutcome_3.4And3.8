@@ -1,14 +1,9 @@
 <!-- localhost/musicdb/connect.php -->
 
-<!--
-The following data is used to connect to the sql database.
-servername: localhost
-username: pburt
-password: dojustly01
-dbaseName: musicdb
--->
-
 <?php
+	if($_SERVER['REQUEST_URI'] == '/musicdb/connect.php') {
+		header('location: index.php');
+	}
 	//connection variable (tells where to connect servername, username, password, dbaseName)
 	$con = mysqli_connect("localhost","pburt","dojustly01","musicdb");
 	// Check connection

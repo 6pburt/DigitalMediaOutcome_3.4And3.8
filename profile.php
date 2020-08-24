@@ -15,7 +15,8 @@ elseif($_SESSION['login_user'] == "Graham") {
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Profile</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel='icon' href='images/favicon.ico' type='image/x-icon'/ >
 	</head>
 	<body id="load" onload="load()">
 		<div id="wrapper">
@@ -63,6 +64,6 @@ elseif($_SESSION['login_user'] == "Graham") {
 				<p>Copyright Pierce Burt 2020</p>
 			</div><!-- end of footer -->
 		</div><!-- end of container -->
-		<script src="prfscript.js"></script>
+		<script src="js/prfscript.js"></script>
 	</body>
 </html>

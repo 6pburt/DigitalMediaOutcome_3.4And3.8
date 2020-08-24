@@ -7,7 +7,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Browse</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel='icon' href='images/favicon.ico' type='image/x-icon'/ >
 	</head>
 	<body id="load" onload="load()">
 		<div id="wrapper">
@@ -96,6 +97,6 @@
 				<p>Copyright Pierce Burt 2020</p>
 			</div><!-- end of footer -->
 		</div><!-- end of container -->
-		<script src="script.js"></script>
+		<script src="js/script.js"></script>
 	</body>
 </html>

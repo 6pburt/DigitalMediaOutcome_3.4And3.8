@@ -5,7 +5,7 @@
 		header('location: index.php');
 	}
 	//connection variable (tells where to connect servername, username, password, dbaseName)
-	$con = mysqli_connect("localhost","pburt","dojustly01","musicdb");
+	$con = mysqli_connect("localhost","User","dojustly01","musicdb");
 	// Check connection
 	if (mysqli_connect_errno())
 	{

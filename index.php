@@ -7,7 +7,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel='icon' href='images/favicon.ico' type='image/x-icon'/ >
 </head>
 	<body id="load" onload="load()">
 		<div id="wrapper">
@@ -45,27 +46,15 @@
 								$durval = (($dur - $dur % 60) / 60).":0".strval(($dur % 60));}
 							elseif(strlen(strval(($dur % 60))) == 0) {
 								$durval = (($dur - $dur % 60) / 60).":00".strval(($dur % 60));}
-							
-							//$query2 = ("SELECT g.genre genre
-							//FROM genre g
-							//INNER JOIN genre_link gl ON g.g_id = gl.genre_id
-							//WHERE song_id = ".$output['id']);
 
 							$query3 = ("SELECT a.artist artist
 							FROM artist a
 							INNER JOIN artist_link al ON a.a_id = al.artist_id
 							WHERE song_id = ".$output['id']);
 
-							//$res2 = mysqli_query($con,$query2);
 							$res3 = mysqli_query($con,$query3);
 
-							//$genre = "";
 							$artist = "";
-							
-							//while ($output2 = mysqli_fetch_array($res2))
-							//{
-							//	$genre = $output2['genre']." ".$genre;
-							//}
 
 							while ($output3 = mysqli_fetch_array($res3))
 							{
@@ -96,6 +85,6 @@
 			</div><!-- end of footer -->
 		</div><!-- end of container -->
 
-		<script src="script.js"></script>
+		<script src="js/script.js"></script>
 	</body>
 </html>

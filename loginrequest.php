@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	//kicks user off of this page
 	if($_SERVER['REQUEST_URI'] == '/musicdb/loginrequest.php') {
 		header('location: index.php');
 	}

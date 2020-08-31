@@ -1,6 +1,7 @@
 <!-- localhost/musicdb/connect.php -->
 
 <?php
+	//boots users off of this page
 	if($_SERVER['REQUEST_URI'] == '/musicdb/connect.php') {
 		header('location: index.php');
 	}

@@ -22,7 +22,9 @@ html{
 	--colj: rgb(38,19,46,0.6);
 	--colk: rgb(0,0,0,0);
 
-	/*--cola: rgb(148,190,229);
+	/*Alternate colour scheme*/
+	/*
+	--cola: rgb(148,190,229);
 	--colb: rgb(245,126,32);
 	--colc: rgb(172,140,193);
 	--coli: rgb(145,97,168);
@@ -30,7 +32,8 @@ html{
 	--cold: rgb(0,0,0);
 	--colf: rgb(0,0,0,0.2);
 	--colg: rgb(0,0,0,0.4);
-	--colh: rgb(255,255,255,0.7);*/
+	--colh: rgb(255,255,255,0.7);
+	*/
 
 	background-color: var(--cola);
 	font-family: "Open Sans", Arial;
@@ -42,6 +45,7 @@ body{
 	padding: 0;
 }
 
+/*This makes the page grey until loaded*/
 #load{
 	filter: grayscale(100%);
 	transition: filter 1s ease-in;
@@ -632,8 +636,11 @@ input[type=submit]:focus{
 
 .indexqry{
 	display: grid;
-	grid-template-columns: 20% 20% 20% 20% 20%;
-	grid-template-rows: 250px 250px 250px 250px;
+	grid-template-columns: repeat(5, 210px);
+	grid-auto-rows: 250px;
+	grid-row-gap: 20px;
+	grid-column-gap: calc((20% - 210px) * 5 / 4);
+	padding: 10px;
 }
 
 .song{

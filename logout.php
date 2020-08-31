@@ -1,4 +1,5 @@
 <?php
+//logs out user
 if(session_id() == ''){
     session_start();
 }

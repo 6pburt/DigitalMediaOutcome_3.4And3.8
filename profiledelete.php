@@ -1,9 +1,11 @@
 <html>
 	<?php
+	//kicks users off this page
 	if($_SERVER['REQUEST_URI'] == '/musicdb/profiledelete.php') {
 		header('location: index.php');
 	}
 	?>
+	<!--a card similar to the login card where a user can delete their account-->
 	<div id="prfdelpage" onload="openDelForm()">
 		<div id="prfdelcard">
 			<h2>Confirm Password</h2><img id="prfdelclose" src="images/cross.png">

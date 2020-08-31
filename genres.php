@@ -1,16 +1,23 @@
-<!-- localhost/musicdb/index.php -->
+<!-- localhost/musicdb/genres.php -->
 
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="ISO-8859-1">
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Genres</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
+	<head>
+	<!--The meta data for the site. This describes the site to the browser.-->
+		<meta charset="ISO-8859-1">
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<meta name="description" content="Graham's music database">
+		<meta name="keywords" content="Graham, music, database">
+		<meta name="author" content="Pierce Burt">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Genres</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+	</head>
+	<!--Calls load() when the body loads-->
 	<body id="load" onload="load()">
 		<div id="wrapper">
+		<!--Adds login card, nav and header to page-->
 		<?php
 		if(!isset($_SESSION['login_user'])) {
 			require_once("login.php");
@@ -19,14 +26,14 @@
 		<?php require_once('nav.php'); ?>
 		<?php require_once('header.php'); ?>
 			
-	
+			<!--holds the content of the page (what genres the database has)-->
 			<div id="query">
 				<div class="genreqry">
 				<?php
 					//connect.php (tells where to connect servername, username, password, dbaseName)
 					require_once('connect.php');
 					
-					//create a variable to store sql code for the 'display all users' query
+					//create a variable to store sql code for the 'display all genres' query
 					$query = ("SELECT genre
 					FROM genre
 					");
@@ -53,6 +60,7 @@
 				<p>Copyright Pierce Burt 2020</p>
 			</div><!-- end of footer -->
 		</div><!-- end of container -->
+		<!--script for login card, load animation-->
 		<script src="script.js"></script>
 	</body>
 </html>

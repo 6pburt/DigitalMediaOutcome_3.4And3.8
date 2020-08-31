@@ -1,4 +1,5 @@
 <?php
+//Kicks out logged out users and moves Graham to his admin page
 session_start();
 if(!isset($_SESSION['login_user'])) {
 	header('location: index.php');
@@ -8,15 +9,22 @@ elseif($_SESSION['login_user'] == "Graham") {
 }
 ?>
 
-<!-- localhost/UseThis/06_UpdateUser.php-->
+<!-- localhost/musicdb/profile.php-->
 
 <!DOCTYPE html5>
 <html>
 	<head>
+	<!--The meta data for the site. This describes the site to the browser.-->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Profile</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+		<meta name="description" content="Graham's music database">
+		<meta name="keywords" content="Graham, music, database">
+		<meta name="author" content="Pierce Burt">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
+	<!--Calls load() when the body loads-->
 	<body id="load" onload="load()">
 		<div id="wrapper">
 			<?php require_once('nav.php'); 
@@ -33,7 +41,7 @@ elseif($_SESSION['login_user'] == "Graham") {
 				$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 				$count = mysqli_num_rows($result);
 						
-				//If result matched $myusername and $mypassword, table row must be 1 row
+				//If result matched $myusername and $mypassword, table row must be 1 row, therefore will activate the second layer of confirmation
 				if($count == 1) {
 					require("profiledelete.php");
 				} 
@@ -43,11 +51,13 @@ elseif($_SESSION['login_user'] == "Graham") {
 			}
 			?>
 			<div id="pheader">
+				<!--styled the same way as graham's admin page-->
 				<img class="phimg" src="images/headerimg.jpg">
 				<div class="phimg"></div>
 				<h2 class="phtext">Dashboard</h2>
 				<div id="headerquery">
 					<div id="profilecnt">
+						<!--form where a user can delete their account-->
 						<div id="deleteuser">
 						<form action="" method ="post">
 							<div id="deluserprf"><label>Input password and submit to delete account: </label>

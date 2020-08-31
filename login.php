@@ -1,10 +1,13 @@
 <html>
 	<?php
+	//adds the code to check the login credentials
 	require_once("loginrequest.php");
+	//kicks users off of this page
 	if($_SERVER['REQUEST_URI'] == '/musicdb/login.php') {
 		header('location: index.php');
 	}
 	?>
+	<!-- Login card that floats over the center of the page -->
 	<div id="loginpage" style="<?php if($error==null){echo("display: none;");} else{echo("display: block;");}?>">
 		<div id="logincard">
 			<h2>Login</h2><img id="loginclose" src="images/cross.png"><form action="" method ="post">

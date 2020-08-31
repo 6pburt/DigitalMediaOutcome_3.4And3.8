@@ -1,3 +1,4 @@
+<!--Header for the legacy profile pages-->
 <html>
 	<?php
 	if($_SERVER['REQUEST_URI'] == '/musicdb/profileheader.php') {

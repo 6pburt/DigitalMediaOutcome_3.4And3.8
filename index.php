@@ -3,23 +3,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!--The meta data for the site. This describes the site to the browser.-->
 	<meta charset="ISO-8859-1">
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="description" content="Graham's music database">
+	<meta name="keywords" content="Graham, music, database">
+	<meta name="author" content="Pierce Burt">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
+	<!--Calls load() when the body loads-->
 	<body id="load" onload="load()">
 		<div id="wrapper">
 		<?php
+		//adds login card, nav, and header
 		if(!isset($_SESSION['login_user'])) {
 			require_once("login.php");
 		}
 		?>
 		<?php require_once('nav.php'); ?>
 		<?php require_once('header.php'); ?>
-	
+			<!--holds page content-->
 			<div id="query">
+				<!--formats the content in a grid-->
 				<div class="indexqry">
 				<?php
 					//connect.php (tells where to connect servername, username, password, dbaseName)
@@ -38,34 +46,14 @@
 					//run query results using a while loop to make a div for each song with all the information in it
 						while ($output = mysqli_fetch_array($res))
 						{	
-							$dur = $output['duration'];
-							if(strlen(strval(($dur % 60))) == 2) {
-							$durval = (($dur - $dur % 60) / 60).":".strval(($dur % 60));}
-							elseif(strlen(strval(($dur % 60))) == 1) {
-								$durval = (($dur - $dur % 60) / 60).":0".strval(($dur % 60));}
-							elseif(strlen(strval(($dur % 60))) == 0) {
-								$durval = (($dur - $dur % 60) / 60).":00".strval(($dur % 60));}
-							
-							//$query2 = ("SELECT g.genre genre
-							//FROM genre g
-							//INNER JOIN genre_link gl ON g.g_id = gl.genre_id
-							//WHERE song_id = ".$output['id']);
-
 							$query3 = ("SELECT a.artist artist
 							FROM artist a
 							INNER JOIN artist_link al ON a.a_id = al.artist_id
 							WHERE song_id = ".$output['id']);
 
-							//$res2 = mysqli_query($con,$query2);
 							$res3 = mysqli_query($con,$query3);
 
-							//$genre = "";
 							$artist = "";
-							
-							//while ($output2 = mysqli_fetch_array($res2))
-							//{
-							//	$genre = $output2['genre']." ".$genre;
-							//}
 
 							while ($output3 = mysqli_fetch_array($res3))
 							{
@@ -76,7 +64,7 @@
 									$artist = $output3['artist'].", ".$artist;
 								}
 							}
-
+							//outputs the data and an album cover for each song.
 							echo("<div id='box'>"
 							.'<div class="albcover">
 							<img class="cover" src="album_covers/'.$output['song'].'album cover/'.$output['song'].'album cover_1.jpg" alt="'.$output['song'].' album cover">

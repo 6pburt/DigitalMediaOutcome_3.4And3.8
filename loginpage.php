@@ -4,7 +4,7 @@
 		<!--The meta data for the site. This describes the site to the browser.-->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Login</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="icon" type="image/x-icon" href="images/favicon.ico">
 		<meta name="description" content="Graham's music database">
 		<meta name="keywords" content="Graham, music, database">
@@ -14,7 +14,7 @@
 	<!--Calls load() when the body loads-->
 	<body id="load" onload="load()">
 	<!--script to check if the body has loaded to make the website have colour-->
-	<script src="script.js"></script>
+	<script src="js/script.js"></script>
 		<div id="wrapper">
 			<?php
 			//Adds nav and header and kicks out logged in users

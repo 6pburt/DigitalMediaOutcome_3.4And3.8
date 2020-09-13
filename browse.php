@@ -7,7 +7,7 @@
 		<meta charset="ISO-8859-1">
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 		<title>Browse</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="icon" type="image/x-icon" href="images/favicon.ico">
 		<meta name="description" content="Graham's music database">
 		<meta name="keywords" content="Graham, music, database">
@@ -112,6 +112,6 @@
 			</div><!-- end of footer -->
 		</div><!-- end of container -->
 		<!--script for the body load animation and login card-->
-		<script src="script.js"></script>
+		<script src="js/script.js"></script>
 	</body>
 </html>

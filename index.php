@@ -11,7 +11,7 @@
 	<meta name="author" content="Pierce Burt">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 	<!--Calls load() when the body loads-->
@@ -84,6 +84,6 @@
 			</div><!-- end of footer -->
 		</div><!-- end of container -->
 
-		<script src="script.js"></script>
+		<script src="js/script.js"></script>
 	</body>
 </html>
